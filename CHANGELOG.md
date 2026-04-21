@@ -1,3 +1,9 @@
+## 0.1.1
+
+- Add Swift Package Manager support for iOS (alongside CocoaPods).
+- Add `topics` to pubspec for discoverability.
+- Expand dartdoc coverage on all public API members.
+
 ## 0.1.0
 
 - Initial release.

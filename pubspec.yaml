@@ -1,9 +1,15 @@
 name: keyboard_size_peek
 description: "Reports the keyboard's final height before the show/hide animation starts. Size bottom sheets and attachment panels without debounce magic."
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/stojanovventures/keyboard_size_peek
 repository: https://github.com/stojanovventures/keyboard_size_peek
 issue_tracker: https://github.com/stojanovventures/keyboard_size_peek/issues
+
+topics:
+  - keyboard
+  - ime
+  - inset
+  - mobile
 
 environment:
   sdk: ^3.11.4
