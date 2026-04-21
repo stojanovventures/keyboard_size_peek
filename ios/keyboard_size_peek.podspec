@@ -11,7 +11,7 @@ Reports the keyboard's final height before the show/hide animation starts. Size 
                        DESC
   s.homepage         = 'https://github.com/stojanovventures/keyboard_size_peek'
   s.license          = { :type => 'MIT', :file => '../LICENSE' }
-  s.author           = { 'Viktor Stojanov' => 'viktor@stojanovventures.com' }
+  s.author           = { 'Viktor Stojanov' => 'hello@stojanovventures.com' }
   s.source           = { :git => 'https://github.com/stojanovventures/keyboard_size_peek.git', :tag => s.version.to_s }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
