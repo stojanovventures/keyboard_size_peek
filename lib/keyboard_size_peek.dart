@@ -6,6 +6,8 @@ library;
 
 import 'dart:async';
 
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, kIsWeb, TargetPlatform;
 import 'package:flutter/services.dart';
 
 /// A single show/hide event from the system keyboard.
@@ -66,6 +68,17 @@ class KeyboardSizePeek {
   /// multiple listeners are supported and share the same underlying channel
   /// subscription.
   static Stream<KeyboardSizeEvent> get events {
+    // Native channel is only registered on iOS/Android (the platforms with a
+    // soft keyboard). On any other platform (macOS/desktop/web) there is no
+    // handler, so opening the EventChannel would throw MissingPluginException
+    // on listen. Return an inert stream instead.
+    final supported =
+        !kIsWeb &&
+        (defaultTargetPlatform == TargetPlatform.iOS ||
+            defaultTargetPlatform == TargetPlatform.android);
+    if (!supported) {
+      return const Stream<KeyboardSizeEvent>.empty();
+    }
     return _stream ??= _channel.receiveBroadcastStream().map((dynamic e) {
       final map = Map<String, dynamic>.from(e as Map);
       return KeyboardSizeEvent(
