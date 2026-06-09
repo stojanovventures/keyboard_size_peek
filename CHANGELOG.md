@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Return an inert empty stream on platforms without a native implementation (macOS/desktop/web) instead of throwing `MissingPluginException` when listening.
+
 ## 0.1.1
 
 - Add Swift Package Manager support for iOS (alongside CocoaPods).
